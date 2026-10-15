@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AcreView Property Group | Real Estate Agency in Accra, Ghana</title>
+<meta name="description" content="AcreView Property Group is a real estate agency in Accra, Ghana. Browse verified property listings across Oyarifa, East Legon, Roman Ridge and Cantonments.">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon_32.png">
+<link rel="apple-touch-icon" href="assets/images/favicon_180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <span>Accra, Ghana</span>
+    <span class="topbar-sep">&middot;</span>
+    <a href="tel:+233557385559">+233 55 738 5559</a>
+    <span class="topbar-sep">&middot;</span>
+    <a href="mailto:acreview.gh@gmail.com">acreview.gh@gmail.com</a>
+  </div>
+</div>
+
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a href="#home" class="brand">
+      <img src="assets/images/logo.png" alt="AcreView Property Group" class="brand-logo">
+      <span class="brand-text">
+        <strong>ACRE VIEW</strong>
+        <small>PROPERTY GROUP</small>
+      </span>
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <a href="#home">Home</a>
+      <a href="#properties">Properties</a>
+      <a href="#about">About</a>
+      <a href="#why">Why Us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a href="https://wa.me/233557385559" target="_blank" rel="noopener" class="btn btn-gold btn-small">WhatsApp Us</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" id="home">
+    <div class="hero-media">
+      <img src="assets/images/cantonments_front.jpg" alt="Modern property managed by AcreView Property Group in Accra">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <p class="eyebrow">Real Estate Agency &middot; Accra, Ghana</p>
+      <h1>Find Your Next Property In Accra</h1>
+      <p class="hero-sub">AcreView Property Group connects buyers and tenants to verified homes across Accra's most sought after neighborhoods, guided by agents who put your interests first from the first viewing to the final handover.</p>
+      <div class="hero-actions">
+        <a href="#properties" class="btn btn-gold">View Properties</a>
+        <a href="#contact" class="btn btn-outline">Talk To An Agent</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>8</strong><span>Properties Listed</span></div>
+        <div><strong>6</strong><span>Neighborhoods</span></div>
+        <div><strong>100%</strong><span>Verified Listings</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="section-inner about-grid">
+      <div class="about-media reveal">
+        <img src="assets/images/bushwick_exterior.jpg" alt="AcreView Property Group listing in East Legon, Accra">
+        <img src="assets/images/logo_skyline.png" class="about-watermark" alt="">
+      </div>
+      <div class="about-copy reveal">
+        <p class="eyebrow">About AcreView</p>
+        <h2>A Real Estate Agency Built On Trust</h2>
+        <p>AcreView Property Group is a real estate agency based in Accra. We represent property owners and developers, connect buyers and tenants to verified listings, and guide every transaction from the first enquiry through to handover.</p>
+        <p>Every property we list is backed by a written agreement with the owner or developer. That means what you see on this page is what is actually available, with honest details on price, progress and status.</p>
+        <div class="about-points">
+          <div class="about-point">
+            <span class="point-mark"></span>
+            <p>Owner and developer agreements for every listing we carry</p>
+          </div>
+          <div class="about-point">
+            <span class="point-mark"></span>
+            <p>Guided viewings, negotiation support and paperwork assistance</p>
+          </div>
+          <div class="about-point">
+            <span class="point-mark"></span>
+            <p>Honest updates on properties still under construction</p>
+          </div>
+        </div>
+        <a href="#contact" class="btn btn-navy">Get In Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="properties" id="properties">
+    <div class="section-inner">
+      <div class="section-head reveal">
+        <p class="eyebrow">Our Listings</p>
+        <h2>Property Portfolio</h2>
+        <p class="section-sub">Browse verified listings across Accra. Tap any property for the full gallery, pricing and status.</p>
+      </div>
+      <div class="filter-bar reveal" id="filterBar">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="available">Available Now</button>
+        <button class="filter-btn" data-filter="construction">Under Construction</button>
+        <button class="filter-btn" data-filter="soon">Coming Soon</button>
+      </div>
+      <div class="property-grid" id="propertyGrid"></div>
+    </div>
+  </section>
+
+  <section class="why" id="why">
+    <div class="section-inner">
+      <div class="section-head reveal light">
+        <p class="eyebrow">Why AcreView</p>
+        <h2>What You Get When You Work With Us</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card reveal">
+          <div class="why-icon">01</div>
+          <h3>Verified Listings</h3>
+          <p>Every property we represent is backed by a written agreement with the owner or developer, so you are never chasing a listing that does not exist.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon">02</div>
+          <h3>Professional Presentation</h3>
+          <p>Each listing gets proper photography and clear documentation, not a handful of blurry pictures sent over WhatsApp.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon">03</div>
+          <h3>Honest Guidance</h3>
+          <p>We tell you what stage a property is at, what it costs and what to expect. No inflated claims and no pressure to decide fast.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon">04</div>
+          <h3>Full Support</h3>
+          <p>From your first enquiry to the final paperwork, we stay with you through viewings, negotiations and handover.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="process">
+    <div class="section-inner">
+      <div class="section-head reveal">
+        <p class="eyebrow">How It Works</p>
+        <h2>Four Simple Steps</h2>
+      </div>
+      <div class="process-grid">
+        <div class="process-step reveal">
+          <span class="step-num">1</span>
+          <h3>Tell Us What You Need</h3>
+          <p>Share your budget, preferred area and must have features.</p>
+        </div>
+        <div class="process-step reveal">
+          <span class="step-num">2</span>
+          <h3>We Shortlist Properties</h3>
+          <p>We match you to verified listings that fit your criteria.</p>
+        </div>
+        <div class="process-step reveal">
+          <span class="step-num">3</span>
+          <h3>Schedule A Viewing</h3>
+          <p>We arrange convenient viewing times for every property you like.</p>
+        </div>
+        <div class="process-step reveal">
+          <span class="step-num">4</span>
+          <h3>Close With Confidence</h3>
+          <p>We guide you through offers, paperwork and the final handover.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band reveal">
+    <div class="section-inner cta-inner">
+      <div>
+        <h2>Have A Property To List With Us?</h2>
+        <p>We work with owners and developers across Accra on a success based fee, so you only pay when your property sells or rents.</p>
+      </div>
+      <a href="https://wa.me/233557385559" target="_blank" rel="noopener" class="btn btn-gold">Message Us On WhatsApp</a>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="section-inner contact-grid">
+      <div class="contact-info reveal">
+        <p class="eyebrow">Contact</p>
+        <h2>Let's Find Your Next Property</h2>
+        <p class="section-sub">Reach out and an agent will get back to you, usually within a day.</p>
+        <ul class="contact-list">
+          <li>
+            <span class="contact-label">Phone</span>
+            <a href="tel:+233557385559">+233 55 738 5559</a>
+          </li>
+          <li>
+            <span class="contact-label">Email</span>
+            <a href="mailto:acreview.gh@gmail.com">acreview.gh@gmail.com</a>
+          </li>
+          <li>
+            <span class="contact-label">Location</span>
+            <span>Accra, Ghana</span>
+          </li>
+          <li>
+            <span class="contact-label">Social</span>
+            <span class="social-links">
+              <a href="https://instagram.com/acreview.gh" target="_blank" rel="noopener">Instagram @acreview.gh</a>
+              <a href="https://tiktok.com/@acreview.gh" target="_blank" rel="noopener">TikTok @acreview.gh</a>
+            </span>
+          </li>
+        </ul>
+        <a href="https://wa.me/233557385559" target="_blank" rel="noopener" class="btn btn-gold">Chat On WhatsApp</a>
+      </div>
+      <form class="contact-form reveal" id="contactForm">
+        <div class="form-row">
+          <label>Full Name</label>
+          <input type="text" name="name" required placeholder="Your name">
+        </div>
+        <div class="form-row">
+          <label>Phone Or Email</label>
+          <input type="text" name="contact" required placeholder="How can we reach you">
+        </div>
+        <div class="form-row">
+          <label>What Are You Looking For</label>
+          <textarea name="message" rows="4" placeholder="Tell us your budget, preferred area and property type"></textarea>
+        </div>
+        <button type="submit" class="btn btn-navy full-width">Send Message</button>
+        <p class="form-note">This opens your email app with the details filled in, addressed to acreview.gh@gmail.com.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="section-inner footer-inner">
+    <div class="footer-brand">
+      <img src="assets/images/logo.png" alt="AcreView Property Group">
+      <p>Properties, Professionally Sold.</p>
+    </div>
+    <nav class="footer-nav">
+      <a href="#home">Home</a>
+      <a href="#properties">Properties</a>
+      <a href="#about">About</a>
+      <a href="#why">Why Us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="footer-contact">
+      <a href="tel:+233557385559">+233 55 738 5559</a>
+      <a href="mailto:acreview.gh@gmail.com">acreview.gh@gmail.com</a>
+      <div class="footer-social">
+        <a href="https://instagram.com/acreview.gh" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://tiktok.com/@acreview.gh" target="_blank" rel="noopener">TikTok</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="section-inner">
+      <p>&copy; <span id="year"></span> AcreView Property Group. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+    <div class="lightbox-gallery">
+      <button class="lightbox-arrow lightbox-prev" id="lightboxPrev" aria-label="Previous image">&#8249;</button>
+      <img src="" alt="" id="lightboxImg">
+      <button class="lightbox-arrow lightbox-next" id="lightboxNext" aria-label="Next image">&#8250;</button>
+    </div>
+    <div class="lightbox-details">
+      <span class="status-badge" id="lightboxStatus"></span>
+      <h3 id="lightboxTitle"></h3>
+      <p class="lightbox-location" id="lightboxLocation"></p>
+      <p class="lightbox-spec" id="lightboxSpec"></p>
+      <p class="lightbox-price" id="lightboxPrice"></p>
+      <p class="lightbox-desc" id="lightboxDesc"></p>
+      <div class="lightbox-thumbs" id="lightboxThumbs"></div>
+      <a href="#" target="_blank" rel="noopener" class="btn btn-gold" id="lightboxWhatsapp">Ask About This Property</a>
+    </div>
+  </div>
+</div>
+
+<a href="https://wa.me/233557385559" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 32 32" width="28" height="28" fill="currentColor"><path d="M16.001 3C9.374 3 4 8.373 4 15c0 2.386.697 4.611 1.902 6.479L4 29l7.73-1.858A11.94 11.94 0 0 0 16.001 27C22.627 27 28 21.627 28 15S22.627 3 16.001 3zm0 21.818a9.78 9.78 0 0 1-4.99-1.37l-.358-.213-4.59 1.103 1.127-4.472-.234-.37A9.77 9.77 0 0 1 5.182 15c0-5.967 4.852-10.818 10.819-10.818S26.818 9.033 26.818 15 21.967 24.818 16.001 24.818zm5.6-8.142c-.307-.154-1.818-.897-2.1-1-.282-.103-.487-.154-.692.154-.205.307-.794 1-.974 1.206-.18.205-.359.231-.666.077-.307-.154-1.296-.478-2.47-1.524-.913-.814-1.53-1.818-1.709-2.125-.18-.307-.02-.473.135-.626.138-.138.307-.359.46-.538.154-.18.205-.308.307-.513.103-.206.051-.385-.026-.539-.077-.154-.692-1.667-.948-2.283-.25-.6-.504-.519-.692-.529-.18-.009-.385-.011-.59-.011s-.539.077-.821.385c-.282.308-1.077 1.052-1.077 2.566s1.102 2.977 1.256 3.183c.154.205 2.17 3.313 5.256 4.646.734.317 1.307.506 1.754.648.737.234 1.408.201 1.938.122.591-.088 1.818-.743 2.075-1.46.256-.718.256-1.333.18-1.46-.077-.128-.282-.205-.59-.359z"/></svg>
+</a>
+
+<script src="assets/data.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>
