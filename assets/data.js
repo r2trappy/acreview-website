@@ -3,7 +3,7 @@ const PROPERTIES = [
   {
     id: "one-elm",
     name: "One Elm Apartments",
-    location: "Accra",
+    location: "Airport, Accra",
     spec: "2 Bedroom Apartment, With Pool Deck And Gym",
     price: "$280,000 to $300,000",
     statusLabel: "Available Now",
@@ -45,7 +45,7 @@ const PROPERTIES = [
   {
     id: "pine-court",
     name: "Pine Court Apartments",
-    location: "Accra",
+    location: "Cantonments, Accra",
     spec: "2 Bedroom Furnished Apartment, With Pool, Gym And Rooftop Terrace",
     price: "From $1,800 per month",
     statusLabel: "Monthly Stay",
@@ -59,7 +59,7 @@ const PROPERTIES = [
   {
     id: "pristine-garden",
     name: "Pristine Garden",
-    location: "Accra",
+    location: "Cantonments, Accra",
     spec: "2 Bedroom Furnished Apartment, With Pool And Gym",
     price: "$1,800 per month",
     statusLabel: "Monthly Stay",
