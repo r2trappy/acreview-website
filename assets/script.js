@@ -34,10 +34,30 @@ revealEls.forEach(el => io.observe(el));
 /* ---------- render property grid ---------- */
 const grid = document.getElementById('propertyGrid');
 
+const VID_BASE = 'assets/videos/';
+const isVideo = (f) => /\.mp4$/i.test(f);
+const srcOf = (f) => (isVideo(f) ? VID_BASE : IMG_BASE) + f;
+const posterOf = (f) => VID_BASE + f.replace(/\.mp4$/i, '.jpg');
+
+const cardVideoObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    const v = entry.target;
+    if (entry.isIntersecting) { v.play().catch(() => {}); } else { v.pause(); }
+  });
+}, { threshold: 0.5 });
+
 function cardMedia(property) {
   if (property.images.length > 0) {
-    return `<img src="${IMG_BASE}${property.images[0]}" alt="${property.name}" loading="lazy" style="object-position:${property.coverPos || '50% 50%'}">
-      <span class="photo-count">${property.images.length} Photo${property.images.length > 1 ? 's' : ''}</span>`;
+    const first = property.images[0];
+    const pos = property.coverPos || '50% 50%';
+    const hasVideo = property.images.some(isVideo);
+    const countLabel = hasVideo
+      ? `<span class="photo-count video-count"><svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Video Tour</span>`
+      : `<span class="photo-count">${property.images.length} Photo${property.images.length > 1 ? 's' : ''}</span>`;
+    const media = isVideo(first)
+      ? `<video src="${srcOf(first)}" poster="${posterOf(first)}" muted loop playsinline preload="none" aria-label="${property.name}" style="object-position:${pos}"></video>`
+      : `<img src="${srcOf(first)}" alt="${property.name}" loading="lazy" style="object-position:${pos}">`;
+    return media + countLabel;
   }
   return `<div class="card-placeholder"><img src="${IMG_BASE}logo_skyline.png" alt=""></div>`;
 }
@@ -65,6 +85,7 @@ function renderGrid(filter) {
     `;
     card.addEventListener('click', () => openLightbox(idx));
     grid.appendChild(card);
+    card.querySelectorAll('video').forEach(v => cardVideoObserver.observe(v));
     io.observe(card);
     requestAnimationFrame(() => card.classList.add('visible'));
   });
@@ -97,25 +118,95 @@ const lightboxNext = document.getElementById('lightboxNext');
 
 let currentProperty = null;
 let currentImgIndex = 0;
+let storyTimer = null;
+const IMAGE_HOLD_MS = 3500;
+
+const lightboxVideo = document.getElementById('lightboxVideo');
+const storyBar = document.getElementById('storyBar');
+
+function clearStoryTimer() {
+  if (storyTimer) { clearTimeout(storyTimer); storyTimer = null; }
+}
+
+function buildStoryBar() {
+  storyBar.innerHTML = '';
+  currentProperty.images.forEach((_, i) => {
+    const seg = document.createElement('button');
+    seg.className = 'story-seg';
+    seg.setAttribute('aria-label', 'Go to item ' + (i + 1));
+    seg.innerHTML = '<i></i>';
+    seg.addEventListener('click', () => setLightboxImage(i));
+    storyBar.appendChild(seg);
+  });
+}
+
+function updateStoryBar(index, progress) {
+  const segs = storyBar.querySelectorAll('.story-seg');
+  segs.forEach((seg, i) => {
+    const fill = seg.firstElementChild;
+    if (i < index) fill.style.width = '100%';
+    else if (i > index) fill.style.width = '0%';
+    else fill.style.width = (progress * 100) + '%';
+  });
+}
 
 function setLightboxImage(index) {
   const property = currentProperty;
+  clearStoryTimer();
+  lightboxVideo.pause();
   if (!property.images.length) {
+    lightboxVideo.style.display = 'none';
+    lightboxImg.style.display = '';
     lightboxImg.src = IMG_BASE + 'logo_skyline.png';
     lightboxImg.style.objectFit = 'contain';
     lightboxImg.style.padding = '60px';
     lightboxImg.style.background = '#1B2A4A';
+    storyBar.innerHTML = '';
     return;
   }
   currentImgIndex = (index + property.images.length) % property.images.length;
+  const item = property.images[currentImgIndex];
   lightboxImg.style.objectFit = 'cover';
   lightboxImg.style.padding = '0';
   lightboxImg.style.background = 'transparent';
-  lightboxImg.src = IMG_BASE + property.images[currentImgIndex];
+  updateStoryBar(currentImgIndex, 0);
+
+  if (isVideo(item)) {
+    lightboxImg.style.display = 'none';
+    lightboxVideo.style.display = 'block';
+    lightboxVideo.poster = posterOf(item);
+    lightboxVideo.src = srcOf(item);
+    lightboxVideo.currentTime = 0;
+    lightboxVideo.play().catch(() => {});
+  } else {
+    lightboxVideo.style.display = 'none';
+    lightboxImg.style.display = '';
+    lightboxImg.src = srcOf(item);
+    if (property.images.length > 1) {
+      const start = Date.now();
+      const tick = () => {
+        const p = Math.min((Date.now() - start) / IMAGE_HOLD_MS, 1);
+        updateStoryBar(currentImgIndex, p);
+        if (p >= 1) { setLightboxImage(currentImgIndex + 1); } else { storyTimer = setTimeout(tick, 60); }
+      };
+      storyTimer = setTimeout(tick, 60);
+    }
+  }
   lightboxThumbs.querySelectorAll('img').forEach((t, i) => {
     t.classList.toggle('active', i === currentImgIndex);
   });
 }
+
+lightboxVideo.addEventListener('timeupdate', () => {
+  if (lightboxVideo.duration) updateStoryBar(currentImgIndex, lightboxVideo.currentTime / lightboxVideo.duration);
+});
+lightboxVideo.addEventListener('ended', () => {
+  if (currentProperty && currentProperty.images.length > 1) setLightboxImage(currentImgIndex + 1);
+  else { lightboxVideo.currentTime = 0; lightboxVideo.play().catch(() => {}); }
+});
+lightboxVideo.addEventListener('click', () => {
+  if (lightboxVideo.paused) lightboxVideo.play().catch(() => {}); else lightboxVideo.pause();
+});
 
 function openLightbox(idx) {
   currentProperty = PROPERTIES[idx];
@@ -134,19 +225,25 @@ function openLightbox(idx) {
   lightboxWhatsapp.href = `https://wa.me/233557385559?text=${encodeURIComponent(waText)}`;
 
   lightboxThumbs.innerHTML = '';
-  currentProperty.images.forEach((img, i) => {
+  currentProperty.images.forEach((item, i) => {
     const t = document.createElement('img');
-    t.src = IMG_BASE + img;
+    t.src = isVideo(item) ? posterOf(item) : srcOf(item);
+    t.alt = '';
     t.addEventListener('click', () => setLightboxImage(i));
     lightboxThumbs.appendChild(t);
   });
 
-  setLightboxImage(0);
+  buildStoryBar();
   lightbox.classList.add('open');
   document.body.style.overflow = 'hidden';
+  setLightboxImage(0);
 }
 
 function closeLightbox() {
+  clearStoryTimer();
+  lightboxVideo.pause();
+  lightboxVideo.removeAttribute('src');
+  lightboxVideo.load();
   lightbox.classList.remove('open');
   document.body.style.overflow = '';
 }

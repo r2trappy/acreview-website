@@ -10,9 +10,9 @@ const PROPERTIES = [
     statusClass: "available",
     filter: "available",
     deal: "sale",
-    coverPos: "50% 58%",
+    coverPos: "50% 45%",
     desc: "A newly completed two bedroom apartment in One Elm, a modern residential tower with a landscaped pool deck and a fully equipped gym. Interiors feature polished floor tiles, a fitted kitchen with built in oven and hob, a modern bathroom and a private balcony with open views. Pricing varies by unit.",
-    images: ["oneelm_01_building.jpg", "oneelm_02_living.jpg", "oneelm_03_kitchen.jpg", "oneelm_05_bedroom.jpg", "oneelm_06_bathroom.jpg", "oneelm_07_balcony.jpg", "oneelm_08_pool.jpg", "oneelm_09_loungers.jpg", "oneelm_10_poolside.jpg", "oneelm_11_gym.jpg", "oneelm_12_gym.jpg"]
+    images: ["oneelm_v01.mp4", "oneelm_02_living.jpg", "oneelm_03_kitchen.jpg", "oneelm_v02.mp4", "oneelm_05_bedroom.jpg", "oneelm_v03.mp4", "oneelm_v04.mp4", "oneelm_v05.mp4", "oneelm_v06.mp4", "oneelm_08_pool.jpg", "oneelm_v07.mp4", "oneelm_v08.mp4", "oneelm_v09.mp4", "oneelm_v10.mp4", "oneelm_v11.mp4", "oneelm_v12.mp4"]
   },
   {
     id: "woodbridge",
@@ -38,9 +38,9 @@ const PROPERTIES = [
     statusClass: "available",
     filter: "available",
     deal: "sale",
-    coverPos: "50% 20%",
+    coverPos: "50% 30%",
     desc: "A four bedroom home in Trassaco, East Legon, with a private paved patio and garden, floor to ceiling glazing and a modern fitted kitchen with built in oven. Bathrooms feature backlit mirrors and quality fittings throughout.",
-    images: ["trassaco_01_garden.jpg", "trassaco_02_living.jpg", "trassaco_03_kitchen.jpg", "trassaco_04_bathroom.jpg", "trassaco_05_facade.jpg"]
+    images: ["trassaco_v01.mp4", "trassaco_v02.mp4", "trassaco_v03.mp4", "trassaco_v04.mp4", "trassaco_v05.mp4", "trassaco_v06.mp4", "trassaco_v07.mp4"]
   },
   {
     id: "pine-court",
@@ -54,7 +54,7 @@ const PROPERTIES = [
     deal: "stay",
     coverPos: "50% 55%",
     desc: "A furnished two bedroom apartment let on a monthly basis. It has a fully fitted kitchen with dining area, two bedrooms with fitted wardrobes and a comfortable living space. Residents share a swimming pool, a gym and a rooftop terrace with views across the neighborhood. Contact us for availability and move in dates.",
-    images: ["pine_02_kitchen.jpg", "pine_03_bedroom.jpg", "pine_04_bedroom.jpg", "pine_05_bathroom.jpg", "pine_06_gym.jpg", "pine_07_pool.jpg", "pine_08_terrace.jpg"]
+    images: ["pine_v01.mp4", "pine_v02.mp4", "pine_v03.mp4", "pine_v04.mp4", "pine_v05.mp4", "pine_v06.mp4", "pine_v07.mp4", "pine_v08.mp4"]
   },
   {
     id: "pristine-garden",
@@ -68,7 +68,7 @@ const PROPERTIES = [
     deal: "stay",
     coverPos: "50% 55%",
     desc: "A beautifully furnished two bedroom apartment at Pristine Garden, let on a monthly basis. Open plan living and dining with a fully fitted kitchen, comfortable bedrooms and a spacious bathroom. Shared amenities include a swimming pool and a gym. Contact us for availability and move in dates.",
-    images: ["pristine_01_living.jpg", "pristine_08_dining.jpg", "pristine_02_lounge.jpg", "pristine_03_bedroom.jpg", "pristine_04_bathroom.jpg", "pristine_05_pool.jpg", "pristine_06_gym.jpg", "pristine_07_building.jpg"]
+    images: ["pristine_v01.mp4", "pristine_v02.mp4", "pristine_v03.mp4", "pristine_v04.mp4", "pristine_v05.mp4", "pristine_v06.mp4", "pristine_v07.mp4"]
   },
   {
     id: "oyarifa-1934",

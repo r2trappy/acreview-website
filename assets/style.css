@@ -288,7 +288,13 @@ h3{font-size:1.2rem;}
   display:flex; align-items:center; justify-content:center;
 }
 .lightbox-gallery{position:relative; background:var(--navy); display:flex; align-items:center; justify-content:center; min-height:300px; overflow:hidden;}
-.lightbox-gallery img{width:100%; height:100%; object-fit:cover; max-height:90vh;}
+.lightbox-gallery img,.lightbox-gallery video{width:100%; height:100%; object-fit:cover; max-height:90vh; cursor:pointer;}
+.story-bar{position:absolute; left:14px; right:14px; bottom:14px; z-index:4; display:flex; gap:4px;}
+.story-seg{flex:1; height:4px; padding:0; border:none; border-radius:3px; background:rgba(255,255,255,0.38); cursor:pointer; overflow:hidden;}
+.story-seg i{display:block; height:100%; width:0; background:var(--gold);}
+.card-media video{width:100%; height:100%; object-fit:cover; transition:transform .5s ease; display:block;}
+.property-card:hover .card-media video{transform:scale(1.06);}
+.video-count{display:inline-flex; align-items:center; gap:5px;}
 .lightbox-arrow{
   position:absolute; top:50%; transform:translateY(-50%); z-index:4;
   width:40px; height:40px; border-radius:50%; border:none;
