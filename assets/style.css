@@ -185,6 +185,7 @@ h3{font-size:1.2rem;}
 }
 .status-badge.available{background:#2f7d55;}
 .status-badge.construction{background:var(--gold); color:var(--navy);}
+.status-badge.stay{background:var(--navy); color:var(--white); border:1px solid rgba(201,162,39,0.6);}
 .status-badge.soon{background:rgba(255,255,255,0.92); color:var(--navy); border:1px solid rgba(27,42,74,0.15);}
 .photo-count{
   position:absolute; bottom:14px; right:14px; z-index:2;

@@ -36,7 +36,7 @@ const grid = document.getElementById('propertyGrid');
 
 function cardMedia(property) {
   if (property.images.length > 0) {
-    return `<img src="${IMG_BASE}${property.images[0]}" alt="${property.name}" loading="lazy">
+    return `<img src="${IMG_BASE}${property.images[0]}" alt="${property.name}" loading="lazy" style="object-position:${property.coverPos || '50% 50%'}">
       <span class="photo-count">${property.images.length} Photo${property.images.length > 1 ? 's' : ''}</span>`;
   }
   return `<div class="card-placeholder"><img src="${IMG_BASE}logo_skyline.png" alt=""></div>`;
@@ -126,7 +126,12 @@ function openLightbox(idx) {
   lightboxSpec.textContent = currentProperty.spec;
   lightboxPrice.textContent = currentProperty.price;
   lightboxDesc.textContent = currentProperty.desc;
-  lightboxWhatsapp.href = `https://wa.me/233557385559?text=${encodeURIComponent("Hi AcreView, I would like more details on " + currentProperty.name + " in " + currentProperty.location + ".")}`;
+  const isStay = currentProperty.deal === 'stay';
+  lightboxWhatsapp.textContent = isStay ? 'Check Availability' : 'Ask About This Property';
+  const waText = isStay
+    ? "Hi AcreView, I would like to check availability for " + currentProperty.name + " as a monthly stay."
+    : "Hi AcreView, I would like more details on " + currentProperty.name + " in " + currentProperty.location + ".";
+  lightboxWhatsapp.href = `https://wa.me/233557385559?text=${encodeURIComponent(waText)}`;
 
   lightboxThumbs.innerHTML = '';
   currentProperty.images.forEach((img, i) => {
