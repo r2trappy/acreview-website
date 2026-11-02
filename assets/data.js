@@ -5,13 +5,13 @@ const PROPERTIES = [
     name: "One Elm Apartments",
     location: "Airport, Accra",
     spec: "2 Bedroom Apartment, With Pool Deck And Gym",
-    price: "$280,000 to $300,000",
+    price: "$300,000",
     statusLabel: "Available Now",
     statusClass: "available",
     filter: "available",
     deal: "sale",
     coverPos: "50% 45%",
-    desc: "A newly completed two bedroom apartment in One Elm, a modern residential tower with a landscaped pool deck and a fully equipped gym. Interiors feature polished floor tiles, a fitted kitchen with built in oven and hob, a modern bathroom and a private balcony with open views. Pricing varies by unit.",
+    desc: "A newly completed two bedroom apartment in One Elm, a modern residential tower with a landscaped pool deck and a fully equipped gym. Interiors feature polished floor tiles, a fitted kitchen with built in oven and hob, a modern bathroom and a private balcony with open views.",
     images: ["oneelm_v01.mp4", "oneelm_02_living.jpg", "oneelm_03_kitchen.jpg", "oneelm_v02.mp4", "oneelm_05_bedroom.jpg", "oneelm_v03.mp4", "oneelm_v04.mp4", "oneelm_v05.mp4", "oneelm_v06.mp4", "oneelm_08_pool.jpg", "oneelm_v07.mp4", "oneelm_v08.mp4", "oneelm_v09.mp4", "oneelm_v10.mp4", "oneelm_v11.mp4", "oneelm_v12.mp4"]
   },
   {
